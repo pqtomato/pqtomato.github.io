@@ -94,7 +94,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/04/24/mak/index.html">
 <meta property="og:site_name" content="ly's home">
 <meta property="og:description" content="#Servlet 监听器#">
-<meta property="og:updated_time" content="2017-04-24T05:15:46.843Z">
+<meta property="og:updated_time" content="2017-04-24T05:25:13.810Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Servlet笔记">
 <meta name="twitter:description" content="#Servlet 监听器#">
@@ -197,7 +197,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -207,7 +207,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -284,7 +284,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-24T13:00:29+08:00">
                 2017-04-24
@@ -322,27 +322,31 @@
       
 
       
-        <p>#Servlet 监听器#<br><a id="more"></a><br>1、主要Servlet API介绍<br>    javax.servlet.Servlet接口：<br>        所有 java Servlet的基础接口，规定了必须由Servlet具体类实现的方法集<br>    javax.Servlet.GenericServlet类<br>        是servlet的通用版本，是一种与协议无关的Servlet<br>    javax.servlet.http.HttpServlet类<br>        在GenericServlet基础上扩展的基于http协议的Servlet</p>
-<p>2、如何创建Servlet：<br>   （1） 实现Servlet接口<br>   （2）继承GenericServlet类<br>   <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">	import java.io.IOException;</div><div class="line">	import javax.servlet.GenericServlet;</div><div class="line">	import javax.servlet.ServletException;</div><div class="line">	import javax.servlet.ServletRequest;</div><div class="line">	import javax.servlet.ServletResponse;</div><div class="line">public class Servlet3 extends GenericServlet &#123;</div><div class="line">	@Override</div><div class="line">	public void service(ServletRequest arg0, ServletResponse arg1)</div><div class="line">			throws ServletException, IOException &#123;</div><div class="line">		// TODO Auto-generated method stub</div><div class="line"></div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>   （3）继承HttpServlet类(主要应用)</p>
+        <p>#Servlet 监听器#<br><a id="more"></a></p>
+<p>##1、主要Servlet API介绍<br>    javax.servlet.Servlet接口：<br>        所有 java Servlet的基础接口，规定了必须由Servlet具体类实现的方法集<br>    javax.Servlet.GenericServlet类<br>        是servlet的通用版本，是一种与协议无关的Servlet<br>    javax.servlet.http.HttpServlet类<br>        在GenericServlet基础上扩展的基于http协议的Servlet</p>
+<p>##2、如何创建Servlet：</p>
+<p>   ###（1） 实现Servlet接口</p>
+<p>   ###（2）继承GenericServlet类<br>   <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">	import java.io.IOException;</div><div class="line">	import javax.servlet.GenericServlet;</div><div class="line">	import javax.servlet.ServletException;</div><div class="line">	import javax.servlet.ServletRequest;</div><div class="line">	import javax.servlet.ServletResponse;</div><div class="line">public class Servlet3 extends GenericServlet &#123;</div><div class="line">	@Override</div><div class="line">	public void service(ServletRequest arg0, ServletResponse arg1)</div><div class="line">			throws ServletException, IOException &#123;</div><div class="line">		// TODO Auto-generated method stub</div><div class="line"></div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>  ###（3）继承HttpServlet类(主要应用)</p>
 <pre><code>Servlet API
 http://tomcat.apache.org/tomcat-5.5-doc/servletapi/index.html
-</code></pre><p>3、Servlet中主要方法：<br>init():Servlet的初始化方法，仅仅会执行一次<br>service():处理请求和生成响应<br>destroy():在服务器停止并且程序中的Servlet对象不再使用的是时候<br>调用，只执行一次<br>ServletRequest:        封装客户的请求信息<br>                    作用相当于JSP内置对象requset<br>ServletResponse:    创建响应信息，将处理结果返回给客户端<br>                    作用相当于JSP内置对象response<br>ServletConfig:        包含了servlet的初始化参数信息</p>
-<p>4、Servlet生命周期<br>    加载和实例化<br>    初始化（init）<br>    处理请求(Service)<br>    销毁(destroy)<br>生命周期    何时做</p>
+</code></pre><p>##3、Servlet中主要方法：<br>init():Servlet的初始化方法，仅仅会执行一次<br>service():处理请求和生成响应<br>destroy():在服务器停止并且程序中的Servlet对象不再使用的是时候<br>调用，只执行一次<br>ServletRequest:        封装客户的请求信息<br>                    作用相当于JSP内置对象requset<br>ServletResponse:    创建响应信息，将处理结果返回给客户端<br>                    作用相当于JSP内置对象response<br>ServletConfig:        包含了servlet的初始化参数信息</p>
+<p>##4、Servlet生命周期<br>    加载和实例化<br>    初始化（init）<br>    处理请求(Service)<br>    销毁(destroy)<br>生命周期    何时做</p>
 <p>实例化        当servlet容器启动或者容器检测到客户端请求时</p>
 <p>初始化        实例化后，容器调用Servlet的init()初始化对象</p>
 <p>处理请求    得到客户端请求并做出处理时</p>
 <p>销毁        当程序中的Servlet对象不再使用的时候，或者<br>            Web服务器停止运行的时候</p>
-<p>5、Servlet部署与运行<br>    (1)修改web.xml(部署描述文件)<br>    添加<servlet>:把Servlet内部名映射到一个Servlet类名<br>    添加<servlet-mapping>:把用户访问的URL映射到Servlet的内部名</servlet-mapping></servlet></p>
-<pre><code>&lt;servlet-mapping&gt;与&lt;servlet&gt;中的&lt;servlet-name&gt;必须一致
-（2）URL：get请求  post请求封装过的，例如表单提交
-</code></pre>   <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">&lt;servlet&gt;</div><div class="line">   &lt;servlet-name&gt;Servlet4&lt;/servlet-name&gt;</div><div class="line">   &lt;servlet-class&gt;cn.Servlet.com.Servlet4&lt;/servlet-class&gt;</div><div class="line">   &lt;init-param&gt;</div><div class="line">   	&lt;param-name&gt;charSetContent&lt;/param-name&gt;</div><div class="line">   	&lt;param-value&gt;UTF-8&lt;/param-value&gt;</div><div class="line">   &lt;/init-param&gt;</div><div class="line"> &lt;/servlet&gt;</div><div class="line"></div><div class="line"> &lt;servlet-mapping&gt;</div><div class="line">   &lt;servlet-name&gt;Servlet4&lt;/servlet-name&gt;</div><div class="line">&lt;--! 精确匹配 --&gt;</div><div class="line">   &lt;url-pattern&gt;/Servlet4&lt;/url-pattern&gt;</div><div class="line"> &lt;/servlet-mapping&gt;	</div><div class="line"></div><div class="line"></div><div class="line">&lt;servlet-mapping&gt;</div><div class="line">   &lt;servlet-name&gt;Servlet4&lt;/servlet-name&gt;</div><div class="line">&lt;--! 目录匹配 --&gt;</div><div class="line">   &lt;url-pattern&gt;/Demo/*&lt;/url-pattern&gt;</div><div class="line"> &lt;/servlet-mapping&gt;		</div><div class="line"></div><div class="line">&lt;servlet-mapping&gt;</div><div class="line">	&lt;servlet-name&gt;Servlet4&lt;/servlet-name&gt;</div><div class="line">	&lt;--! 后缀名匹配--&gt;</div><div class="line">	&lt;url-pattern&gt;*.do&lt;/url-pattern&gt;</div><div class="line">&lt;/servlet-mapping&gt;</div></pre></td></tr></table></figure>
+<p>##5、Servlet部署与运行</p>
+<h3 id="1-修改web-xml-部署描述文件"><a href="#1-修改web-xml-部署描述文件" class="headerlink" title="(1)修改web.xml(部署描述文件)"></a>(1)修改web.xml(部署描述文件)</h3><pre><code>添加&lt;servlet&gt;:把Servlet内部名映射到一个Servlet类名
+添加&lt;servlet-mapping&gt;:把用户访问的URL映射到Servlet的内部名
+&lt;servlet-mapping&gt;与&lt;servlet&gt;中的&lt;servlet-name&gt;必须一致
+</code></pre><h3 id="（2）URL：get请求-post请求封装过的，例如表单提交"><a href="#（2）URL：get请求-post请求封装过的，例如表单提交" class="headerlink" title="（2）URL：get请求  post请求封装过的，例如表单提交"></a>（2）URL：get请求  post请求封装过的，例如表单提交</h3>   <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">&lt;servlet&gt;</div><div class="line">   &lt;servlet-name&gt;Servlet4&lt;/servlet-name&gt;</div><div class="line">   &lt;servlet-class&gt;cn.Servlet.com.Servlet4&lt;/servlet-class&gt;</div><div class="line">   &lt;init-param&gt;</div><div class="line">   	&lt;param-name&gt;charSetContent&lt;/param-name&gt;</div><div class="line">   	&lt;param-value&gt;UTF-8&lt;/param-value&gt;</div><div class="line">   &lt;/init-param&gt;</div><div class="line"> &lt;/servlet&gt;</div><div class="line"></div><div class="line"> &lt;servlet-mapping&gt;</div><div class="line">   &lt;servlet-name&gt;Servlet4&lt;/servlet-name&gt;</div><div class="line">&lt;--! 精确匹配 --&gt;</div><div class="line">   &lt;url-pattern&gt;/Servlet4&lt;/url-pattern&gt;</div><div class="line"> &lt;/servlet-mapping&gt;	</div><div class="line"></div><div class="line"></div><div class="line">&lt;servlet-mapping&gt;</div><div class="line">   &lt;servlet-name&gt;Servlet4&lt;/servlet-name&gt;</div><div class="line">&lt;--! 目录匹配 --&gt;</div><div class="line">   &lt;url-pattern&gt;/Demo/*&lt;/url-pattern&gt;</div><div class="line"> &lt;/servlet-mapping&gt;		</div><div class="line"></div><div class="line">&lt;servlet-mapping&gt;</div><div class="line">	&lt;servlet-name&gt;Servlet4&lt;/servlet-name&gt;</div><div class="line">	&lt;--! 后缀名匹配--&gt;</div><div class="line">	&lt;url-pattern&gt;*.do&lt;/url-pattern&gt;</div><div class="line">&lt;/servlet-mapping&gt;</div></pre></td></tr></table></figure>
 <p>Servlet的作用<br> 负责接受请求，调用相应的Service方法，决定如何响应，本身不坐业务逻辑</p>
 <p>创建和部署Servlet<br>创建：继承自HttpServlet<br>部署：修改 web.xml ,添加<servlet> <servlet-mapping></servlet-mapping></servlet></p>
 <p>Servlet好处</p>
 <p>专人专职：JSP负责显示，Servlet负责控制<br>学习方法<br>   基于了解Servlet生命周期的基础</p>
-<p>过滤器的概念<br> 1、是向Web应用程序的请求和响应添加功能的Web服务组件<br> 2、过滤器可以统一的集中处理请求和响应<br> 3、使用过滤器技术实现对请求数据的过滤</p>
-<p>过滤器的使用步骤<br>建立实现Filter接口的类(javax.servlet.Filter)<br>实现过滤行为</p>
+<p>#过滤器的概念<br> 1、是向Web应用程序的请求和响应添加功能的Web服务组件<br> 2、过滤器可以统一的集中处理请求和响应<br> 3、使用过滤器技术实现对请求数据的过滤</p>
+<p>##过滤器的使用步骤<br>建立实现Filter接口的类(javax.servlet.Filter)<br>实现过滤行为</p>
 <pre><code>doFilter(..){
 //过滤请求
 chain.doFilter(request,response);//调用下一个过滤器或Web资源
@@ -439,8 +443,17 @@ chain.doFilter(request,response);//调用下一个过滤器或Web资源
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -456,7 +469,7 @@ chain.doFilter(request,response);//调用下一个过滤器或Web资源
             <div class="site-state-item site-state-posts">
               <a href="/archives">
                 <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -484,6 +497,22 @@ chain.doFilter(request,response);//调用下一个过滤器或Web资源
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-修改web-xml-部署描述文件"><span class="nav-number">1.</span> <span class="nav-text">(1)修改web.xml(部署描述文件)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（2）URL：get请求-post请求封装过的，例如表单提交"><span class="nav-number">2.</span> <span class="nav-text">（2）URL：get请求  post请求封装过的，例如表单提交</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

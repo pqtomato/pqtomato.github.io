@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="#Servlet 监听器1、主要Servlet API介绍    javax.servlet.Servlet接口：        所有 java Servlet的基础接口，规定了必须由Servlet具体类实现的方法集    javax.Servlet.GenericServlet类        是servlet的通用版本，是一种与协议无关的Servlet    javax.servlet.htt">
+<meta name="description" content="#Servlet 监听器#1、主要Servlet API介绍    javax.servlet.Servlet接口：        所有 java Servlet的基础接口，规定了必须由Servlet具体类实现的方法集    javax.Servlet.GenericServlet类        是servlet的通用版本，是一种与协议无关的Servlet    javax.servlet.ht">
 <meta name="keywords">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Servlet笔记">
 <meta property="og:url" content="http://yoursite.com/2017/04/24/mak/index.html">
 <meta property="og:site_name" content="ly's home">
-<meta property="og:description" content="#Servlet 监听器1、主要Servlet API介绍    javax.servlet.Servlet接口：        所有 java Servlet的基础接口，规定了必须由Servlet具体类实现的方法集    javax.Servlet.GenericServlet类        是servlet的通用版本，是一种与协议无关的Servlet    javax.servlet.htt">
-<meta property="og:updated_time" content="2017-04-24T05:02:17.135Z">
+<meta property="og:description" content="#Servlet 监听器#1、主要Servlet API介绍    javax.servlet.Servlet接口：        所有 java Servlet的基础接口，规定了必须由Servlet具体类实现的方法集    javax.Servlet.GenericServlet类        是servlet的通用版本，是一种与协议无关的Servlet    javax.servlet.ht">
+<meta property="og:updated_time" content="2017-04-24T05:08:44.261Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Servlet笔记">
-<meta name="twitter:description" content="#Servlet 监听器1、主要Servlet API介绍    javax.servlet.Servlet接口：        所有 java Servlet的基础接口，规定了必须由Servlet具体类实现的方法集    javax.Servlet.GenericServlet类        是servlet的通用版本，是一种与协议无关的Servlet    javax.servlet.htt">
+<meta name="twitter:description" content="#Servlet 监听器#1、主要Servlet API介绍    javax.servlet.Servlet接口：        所有 java Servlet的基础接口，规定了必须由Servlet具体类实现的方法集    javax.Servlet.GenericServlet类        是servlet的通用版本，是一种与协议无关的Servlet    javax.servlet.ht">
 
 
 
@@ -197,7 +197,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -207,7 +207,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -284,7 +284,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-24T13:00:29+08:00">
                 2017-04-24
@@ -322,10 +322,10 @@
       
 
       
-        <p>#Servlet 监听器<br>1、主要Servlet API介绍<br>    javax.servlet.Servlet接口：<br>        所有 java Servlet的基础接口，规定了必须由Servlet具体类实现的方法集<br>    javax.Servlet.GenericServlet类<br>        是servlet的通用版本，是一种与协议无关的Servlet<br>    javax.servlet.http.HttpServlet类<br>        在GenericServlet基础上扩展的基于http协议的Servlet</p>
-<p>2、如何创建Servlet：<br>   （1） 实现Servlet接口<br>   （2）继承GenericServlet类<br>    import java.io.IOException;<br>    import javax.servlet.GenericServlet;<br>    import javax.servlet.ServletException;<br>    import javax.servlet.ServletRequest;<br>    import javax.servlet.ServletResponse;<br>public class Servlet3 extends GenericServlet {<br>    @Override<br>    public void service(ServletRequest arg0, ServletResponse arg1)<br>            throws ServletException, IOException {<br>        // TODO Auto-generated method stub</p>
+        <p>#Servlet 监听器#<br>1、主要Servlet API介绍<br>    javax.servlet.Servlet接口：<br>        所有 java Servlet的基础接口，规定了必须由Servlet具体类实现的方法集<br>    javax.Servlet.GenericServlet类<br>        是servlet的通用版本，是一种与协议无关的Servlet<br>    javax.servlet.http.HttpServlet类<br>        在GenericServlet基础上扩展的基于http协议的Servlet</p>
+<p>2、如何创建Servlet：<br>   （1） 实现Servlet接口<br>   （2）继承GenericServlet类<br>   、、<br>    import java.io.IOException;<br>    import javax.servlet.GenericServlet;<br>    import javax.servlet.ServletException;<br>    import javax.servlet.ServletRequest;<br>    import javax.servlet.ServletResponse;<br>public class Servlet3 extends GenericServlet {<br>    @Override<br>    public void service(ServletRequest arg0, ServletResponse arg1)<br>            throws ServletException, IOException {<br>        // TODO Auto-generated method stub</p>
 <pre><code>}
-</code></pre><p>}<br>   （3）继承HttpServlet类(主要应用)</p>
+</code></pre><p>}<br>、、<br>   （3）继承HttpServlet类(主要应用)</p>
 <pre><code>Servlet API
 http://tomcat.apache.org/tomcat-5.5-doc/servletapi/index.html
 </code></pre><p>3、Servlet中主要方法：<br>init():Servlet的初始化方法，仅仅会执行一次<br>service():处理请求和生成响应<br>destroy():在服务器停止并且程序中的Servlet对象不再使用的是时候<br>调用，只执行一次<br>ServletRequest:        封装客户的请求信息<br>                    作用相当于JSP内置对象requset<br>ServletResponse:    创建响应信息，将处理结果返回给客户端<br>                    作用相当于JSP内置对象response<br>ServletConfig:        包含了servlet的初始化参数信息</p>
@@ -335,17 +335,9 @@ http://tomcat.apache.org/tomcat-5.5-doc/servletapi/index.html
 <p>处理请求    得到客户端请求并做出处理时</p>
 <p>销毁        当程序中的Servlet对象不再使用的时候，或者<br>            Web服务器停止运行的时候</p>
 <p>5、Servlet部署与运行<br>    (1)修改web.xml(部署描述文件)<br>    添加<servlet>:把Servlet内部名映射到一个Servlet类名<br>    添加<servlet-mapping>:把用户访问的URL映射到Servlet的内部名</servlet-mapping></servlet></p>
-<pre><code>！！&lt;servlet-mapping&gt;与&lt;servlet&gt;中的&lt;servlet-name&gt;必须一致
+<pre><code>&lt;servlet-mapping&gt;与&lt;servlet&gt;中的&lt;servlet-name&gt;必须一致
 （2）URL：get请求  post请求封装过的，例如表单提交
-
-&lt;servlet&gt;
-&lt;servlet-name&gt;Servlet4&lt;/servlet-name&gt;
-&lt;servlet-class&gt;cn.Servlet.com.Servlet4&lt;/servlet-class&gt;
-&lt;init-param&gt;
-    &lt;param-name&gt;charSetContent&lt;/param-name&gt;
-    &lt;param-value&gt;UTF-8&lt;/param-value&gt;
-&lt;/init-param&gt;
-</code></pre><p>  </p>
+</code></pre><p>、、<br>    <servlet><br>    <servlet-name>Servlet4</servlet-name><br>    <servlet-class>cn.Servlet.com.Servlet4</servlet-class><br>    <init-param><br>        <param-name>charSetContent</param-name><br>        <param-value>UTF-8</param-value><br>    </init-param><br>  </servlet></p>
 <p>  <servlet-mapping><br>    <servlet-name>Servlet4</servlet-name><br>    &lt;–! 精确匹配 –&gt;<br>    <url-pattern>/Servlet4</url-pattern><br>  </servlet-mapping>    </p>
 <p> <servlet-mapping><br>    <servlet-name>Servlet4</servlet-name><br>    &lt;–! 目录匹配 –&gt;<br>    <url-pattern>/Demo/*</url-pattern><br>  </servlet-mapping>        </p>
 <pre><code>&lt;servlet-mapping&gt;
@@ -353,12 +345,12 @@ http://tomcat.apache.org/tomcat-5.5-doc/servletapi/index.html
     &lt;--! 后缀名匹配--&gt;
     &lt;url-pattern&gt;*.do&lt;/url-pattern&gt;
 &lt;/servlet-mapping&gt;    
-</code></pre><p>Servlet的作用<br> 负责接受请求，调用相应的Service方法，决定如何响应，本身不坐业务逻辑</p>
+</code></pre><p>、、<br>Servlet的作用<br> 负责接受请求，调用相应的Service方法，决定如何响应，本身不坐业务逻辑</p>
 <p>创建和部署Servlet<br>创建：继承自HttpServlet<br>部署：修改 web.xml ,添加<servlet> <servlet-mapping></servlet-mapping></servlet></p>
 <p>Servlet好处</p>
 <p>专人专职：JSP负责显示，Servlet负责控制<br>学习方法<br>   基于了解Servlet生命周期的基础</p>
 <p>过滤器的概念<br> 1、是向Web应用程序的请求和响应添加功能的Web服务组件<br> 2、过滤器可以统一的集中处理请求和响应<br> 3、使用过滤器技术实现对请求数据的过滤</p>
-<p>过滤器的使用步骤<br>建立实现Filter接口的类(javax.servlet.Filter)<br>实现过滤行为<br>    doFilter(..){<br>    //过滤请求<br>    chain.doFilter(request,response);//调用下一个过滤器或Web资源<br>    //过滤响应<br>    }</p>
+<p>过滤器的使用步骤<br>建立实现Filter接口的类(javax.servlet.Filter)<br>实现过滤行为<br>、、<br>    doFilter(..){<br>    //过滤请求<br>    chain.doFilter(request,response);//调用下一个过滤器或Web资源<br>    //过滤响应<br>    }<br>、、    </p>
 
       
     </div>
@@ -467,7 +459,7 @@ http://tomcat.apache.org/tomcat-5.5-doc/servletapi/index.html
             <div class="site-state-item site-state-posts">
               <a href="/archives">
                 <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-name">posts</span>
               </a>
             </div>
           

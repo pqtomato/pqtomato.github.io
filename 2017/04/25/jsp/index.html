@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="#Java DataBase Connectivity">
+<meta name="description" content="#JSP java Server Pages 运行在服务器端的java页面、使用HTML嵌套Java代码实现">
 <meta name="keywords">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JDBC">
-<meta property="og:url" content="http://yoursite.com/2017/04/12/my-new-post/index.html">
+<meta property="og:title" content="JSP java Server Pages">
+<meta property="og:url" content="http://yoursite.com/2017/04/25/jsp/index.html">
 <meta property="og:site_name" content="ly's home">
-<meta property="og:description" content="#Java DataBase Connectivity">
-<meta property="og:updated_time" content="2017-04-24T05:35:14.706Z">
+<meta property="og:description" content="#JSP java Server Pages 运行在服务器端的java页面、使用HTML嵌套Java代码实现">
+<meta property="og:updated_time" content="2017-04-25T04:25:03.702Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JDBC">
-<meta name="twitter:description" content="#Java DataBase Connectivity">
+<meta name="twitter:title" content="JSP java Server Pages">
+<meta name="twitter:description" content="#JSP java Server Pages 运行在服务器端的java页面、使用HTML嵌套Java代码实现">
 
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/12/my-new-post/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/25/jsp/"/>
 
 
 
 
 
-  <title> JDBC | ly's home </title>
+  <title> JSP java Server Pages | ly's home </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -250,7 +250,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/12/my-new-post/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/25/jsp/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="willxue">
@@ -271,7 +271,7 @@
             
             
               
-                JDBC
+                JSP java Server Pages
               
             
           </h1>
@@ -286,8 +286,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-12T00:54:05+08:00">
-                2017-04-12
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-25T12:23:49+08:00">
+                2017-04-25
               </time>
             
 
@@ -322,42 +322,59 @@
       
 
       
-        <p>#Java DataBase Connectivity<br><a id="more"></a></p>
-<p>java数据库连接技术<br>实现java程序对各种数据库的访问</p>
-<p>由一组使用java语言编写的类和接口  组成，他们位于java.sql以及javax.sql</p>
-<p>jdbc:mysql://127.0.0.1:3306/news</p>
-<p>Class.forName(“”);</p>
-<p>DriverManager.getConnection(url,username,password)</p>
-<p>sql语句<br>Statement (connection.createStatement)<br>ResultSet rs =statement.executeQuery(sql)<br>while(rs.next()){<br>    rs.getInt<br>    rs.getString</p>
-<p>}</p>
-<p>JDBC操作数据库的步骤：<br>1&gt;加载驱动 Class.forName(“”);<br>2&gt;获取数据库链接<br>Connection conn =DriverManager.getConnection(url,username,password);<br>3&gt;获取Statement对象，执行sql语句<br>sql=”select * from tablename”;<br>增删改–&gt;对数据库的更新操作<br>insert into<br>update<br>delete from<br>statement.excuteUpdate(sql);<br>prepareStatement ps =connectionpreparedStatement(sql);//预编译<br>ps.setInt(1,Id);</p>
-<p>statement =conn.createStatement();<br>ResultSet rs =statement.excuteQuery(sql);<br>4&gt;处理执行结果<br>while(rs.next()){<br>    int id =rs.getInt(“id”);<br>    String title =rs.getString(“title”);<br>    TimeStamp(datetime)<br>    System…<br>}<br>5&gt;关闭资源<br>rs.close()<br>statement.close()<br>connection.close()</p>
-<p>单例模式：<br>IO操作很消耗系统资源，单例模式就是有且只有一个实例 ，将类的构造方法变成private，<br>为了是阻止别人访问，</p>
-<p>ConfigManager.class.getClassLoader()；<br>获取ConfigManager这个文件src目录</p>
-<p>################################################<br>Statement由方法createStatement()创建，该对象用于发送简单的SQL语句</p>
-<p>PreparedStatement由方法prepareStatement()创建，该对象用于发送带有一个或者多个输入参数的sql语句<br> SQL语句使用”?”作为数据占位符<br> 使用setXxx()方法设置数据</p>
-<p>PrepareStatement —预编译<br>    效率、性能、开销<br>    安全性<br>    代码可读性</p>
-<p>1、将相似功能的代码封装成方法，减少代码多余重复<br>2、因为不同的数据库会有不同的实现，对数据库的操作一般抽取成结果，在以后的开发中可以降低耦合。</p>
-<p>++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</p>
-<p>连接池、连接、数据源</p>
-<p>1、连接池 管理连接对象的，（连接对象是保持与数据库链接的）</p>
-<p>2、数据源DataSource： 创建连接对象</p>
-<p>3、如何获取DataSource？  JNDI （java命名和目录接口），TOMCAT</p>
-<p>4、通过数据源创建的链接对象 被统一的放入到连接池中进行管理</p>
-<p>在tomcat中配置数据源的步骤</p>
-<p>1、Tomcat中加入数据库驱动文件</p>
-<p>2、配置Tomcat中的conf/context.xml<br>    java:comp/env/</p>
-<p>3、使用JNDI获取连接对象</p>
-<p>程序–&gt; ds–&gt; 连接–执行sql</p>
-<p>JDBC API 定义了一系列的接口和类，集成在java.sql和javax.sql包中</p>
-<p>DriverManager<br>  管理各种不同的JDBC驱动</p>
-<p>JDBC驱动<br>  负责连接不同类型的数据库</p>
-<p>Connection<br>DriverManager.getConnection(url,user,password);<br>DS=Context.lookup(“JNDI”);<br>Connection conn =DataSource.getConnection();</p>
-<p>逻辑关联</p>
-<p>SELECT n.id,n.title,n.categoryId,c.name AS categoryName<br>FROM news_detail n,news_category c<br>WHERE n.categoryId =c.id</p>
-<p>1、放入购物车—》提交订单 —业务流程 涉及到几张表</p>
-<p>购物车表、<br>订单表    手机<br>库存表    -1</p>
+        <p>#JSP java Server Pages</p>
+<p>运行在服务器端的java页面、<br>使用HTML嵌套Java代码实现<br><a id="more"></a><br>page</p>
+<p>out</p>
+<p>创建<br>&lt;%String title=”谈北京精神”%&gt;<br>&lt;%=% &gt;<br>&lt;%@pages= %&gt;</p>
+<p>&lt;% %&gt;局部变量<br>&lt;%! %&gt;全局变量</p>
+<p>page指令通过属性定义了JSP的特性，实现与JSP容器的通信</p>
+<p>language页面语言<br>import    通过该属性导包<br>contentType 用来指定页面的MIME类型</p>
+<p>out对象是JSP的内置对象 （无需实例化）</p>
+<p>实现新闻系统的用户注册</p>
+<p>我们在网页的表单中填入数据，提交表单后，数据被提交到哪里去了</p>
+<p>答：JSP中。再经过一系列的业务逻辑，进入数据库</p>
+<p>请求对象： request</p>
+<input type="text" name="userName">
 
+<p>JSP<br>String userName=request.getParameter(“userName”);</p>
+<p>GET与 POST<br>Get请求是指标 new String (s.getBytes(“iso-8859-1”),”utf-8”);<br>治本：修改server.xml</p>
+<p>post 请求是设置request的编码格式<br>设置response的编码格式(page指令)</p>
+<p>在请求中保存属性<br>publice void setAttribute (String name,Object o);</p>
+<p>request.setAttribute(“mess”,”注册失败”)；</p>
+<p>在请求中获取属性<br>public Object getAttribute (String name);</p>
+<p>转发：<br>requset.getRequsetDispatcher(“url”).forward(request,response)</p>
+<jsp:forward page="url">
+
+<p>重定向<br>将用户请求重新定位到一个新的url<br>response.sendRedirect(“url”)</p>
+<p>转发和重定向的区别<br>转发的工作方式：<br>  用户-&gt;JSP页面请求-&gt;服务器中请求响应-&gt;结果反馈给客户端</p>
+<p>重定向：<br>客户端-&gt;请求服务器响应-&gt;响应-&gt;再次请求-&gt;新地址响应给客户端</p>
+<p>在新闻系统中保存用户状态</p>
+<p>登录时自动填写用户名</p>
+<p>统计页面访问次数 application</p>
+<p>重难点session<br>理解cookie、application</p>
+<p>登录成功后自动登录<br>登录后记住用户状态，并在多个页面显示用户名</p>
+<p>使用会话对象session实现<br>  一个会话就是浏览器与服务器之间的一次通话<br>会话可以在多次请求中保存和使用数据</p>
+<p>session id</p>
+<p>public void setAttribute(String name,Object value);</p>
+<p>用法 session.setAttribute(“userName”,”张三丰”)；</p>
+<p>public Object getAttribute(String name);<br>用法：String userName=(String)session.getAttribute(“userName”);</p>
+<p>每个session都有一个唯一的sessionid</p>
+<p>浏览器向服务器发送请求-&gt;sessionid FCA000…<br>        响应-&gt;（携带sessionid）</p>
+<p>查看session ID<br>  session.getId();</p>
+<p>session的数据是在服务器端的，服务器保存的会话数据量会越来越大<br>，从而导致性能问题</p>
+<p>若没有清理机制，会导致性能问题或服务器崩溃<br> 程序主动清除session数据<br> 服务器主动清除长时间没有再次发出请求的session</p>
+<p>程序主动清除session数据<br> 设置会话失效：session.invalidate()<br> 移除会话的一个属性</p>
+<p>public void removeAttribute(String name);<br>用法： session.removeAttribute(“username”);</p>
+<p>服务器主动清除长时间没有再次发送请求的session<br>设置会话过期时间<br>public void serMaxInactiveInterval(int interval)</p>
+<p>浏览器访问服务器—产生会话</p>
+<p>通过浏览器在网站登录—–在会话中保存数据</p>
+<p>登录成功后用个人身份进行访问—-会话有效期内</p>
+<p>关闭了浏览器—结束回话</p>
+<p>服务器主动结束会话——回话到期</p>
+<p>使会话失效、删除属性—-及时释放</p>
+<p>总结：<br> 1、 html和jsp<br>html：一种语言规范，运行在客户端浏览器 （UI）</p>
+<p>JSP：java server page 运行在服务器端的java页面<br>java代码负责数据动态显示</p>
+</jsp:forward>
       
     </div>
 
@@ -393,18 +410,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/24/mak/" rel="next" title="Servlet笔记">
-                <i class="fa fa-chevron-left"></i> Servlet笔记
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/11/hello-world/" rel="prev" title="Hi！">
-                Hi！ <i class="fa fa-chevron-right"></i>
+              <a href="/2017/04/24/M1/" rel="prev" title="mysql忘记密码Windows处理方式">
+                mysql忘记密码Windows处理方式 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
